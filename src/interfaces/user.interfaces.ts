@@ -4,8 +4,7 @@ import {
   userReturnSchema,
   userReadSchema,
 } from "../schemas/user.schema";
-import { User } from "../entities/user.entity";
-import { DeepPartial, Repository } from "typeorm";
+import { DeepPartial } from "typeorm";
 
 type UserRequest = z.infer<typeof createUserSchema>;
 type UserReturn = z.infer<typeof userReturnSchema>;
