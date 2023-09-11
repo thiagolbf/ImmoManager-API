@@ -13,8 +13,17 @@ export const verifyToken = (
 
   const token = authorization.split(" ")[1];
 
-  res.locals = {
-    ...res.locals,
-    decoded: verify(token, process.env.SECRET_KEY!),
-  };
+  // res.locals = {
+  //   ...res.locals,
+  //   decoded: verify(token, process.env.SECRET_KEY!),
+  // };
+
+  verify(token, process.env.SECRET_KEY!, (err, decoded) => {
+    if (err) {
+      throw new AppError(err.message, 401);
+    }
+    res.locals = { ...res.locals, decoded };
+  });
+
+  return next();
 };
