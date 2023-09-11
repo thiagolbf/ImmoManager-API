@@ -9,6 +9,7 @@ import {
   createUserController,
   readUsersController,
   updateUserController,
+  softDeleteUserController,
 } from "../controllers/user.controller";
 
 import { verifyToken } from "../middlewares/verifyToken.middleware";
@@ -35,6 +36,14 @@ userRouter.patch(
   verifyToken,
   verifyUserPermission,
   updateUserController
+);
+
+userRouter.delete(
+  "/:id",
+  verifyUserId,
+  verifyToken,
+  verifyAdmin,
+  softDeleteUserController
 );
 
 export default userRouter;

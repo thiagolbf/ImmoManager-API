@@ -4,6 +4,7 @@ import {
   createUserService,
   readUsersService,
   updateUserService,
+  softDeleteUserService,
 } from "../services/user.services";
 
 import { UserRead, UserReturn } from "../interfaces/user.interfaces";
@@ -35,4 +36,13 @@ export const updateUserController = async (
   );
 
   return res.status(200).json(userUpdated);
+};
+
+export const softDeleteUserController = async (
+  req: Request,
+  res: Response
+): Promise<Response> => {
+  await softDeleteUserService(parseInt(req.params.id));
+
+  return res.status(204).json();
 };
