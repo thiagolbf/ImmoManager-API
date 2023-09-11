@@ -35,3 +35,9 @@ export const updateUserService = async (
   const updated = await userRepository.save({ ...user, ...payload });
   return userReturnSchema.parse(updated);
 };
+
+export const softDeleteUserService = async (userId: number): Promise<void> => {
+  const user: User | null = await userRepository.findOneBy({ id: userId });
+
+  await userRepository.softRemove(user!);
+};
