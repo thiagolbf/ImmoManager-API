@@ -18,7 +18,7 @@ const createUserSchema = userSchema.omit({
   deletedAt: true,
 });
 
-const updateUserSchema = userSchema.partial();
+const updateUserSchema = userSchema.partial().omit({ admin: true });
 
 const userReturnSchema = userSchema.omit({ password: true });
 
