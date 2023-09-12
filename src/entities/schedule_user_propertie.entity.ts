@@ -8,7 +8,7 @@ export class ScheduleUserProperty {
   id: number;
 
   @Column({ type: "date" })
-  date: Date;
+  date: string;
 
   @Column({ type: "time" })
   hour: string;
