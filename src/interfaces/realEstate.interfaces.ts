@@ -1,8 +1,10 @@
 import { z } from "zod";
-import { createRealEstateSchema } from "../schemas/realEstate.schema";
-import { RealEstate } from "../entities/real_estate.entity";
+import {
+  createRealEstateSchema,
+  returnRealEstateSchema,
+} from "../schemas/realEstate.schema";
 
 type RealEstateRequest = z.infer<typeof createRealEstateSchema>;
-type RealEstateRead = Array<RealEstate>;
+type ReturnRealEstate = z.infer<typeof returnRealEstateSchema>;
 
-export { RealEstateRequest, RealEstateRead };
+export { RealEstateRequest, ReturnRealEstate };
