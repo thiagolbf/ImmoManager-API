@@ -1,7 +1,4 @@
-import {
-  RealEstateRequest,
-  ReturnRealEstate,
-} from "../interfaces/realEstate.interfaces";
+import { RealEstateRequest } from "../interfaces/realEstate.interfaces";
 
 import { Category, RealEstate } from "../entities";
 import { Adress } from "../entities";
