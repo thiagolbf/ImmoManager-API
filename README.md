@@ -1,5 +1,3 @@
-⚠️ **Atenção: Este repositório está em construção!** ⚠️
-
 # API para gerenciamento de imobiliária
 
 ### Tecnologias utilizadas;
